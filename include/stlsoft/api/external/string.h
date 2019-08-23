@@ -341,7 +341,7 @@
 
 #  if 0
 #  elif !defined(__STRICT_ANSI__)
-#   define STLSOFT_API_EXTERNAL_string_strnicmp                             STLSOFT_NS_GLOBAL_(_strnicmp)
+#   define STLSOFT_API_EXTERNAL_string_strnicmp                             STLSOFT_NS_GLOBAL_(strncasecmp)
 #  endif
 
   /* Intel */
@@ -407,7 +407,7 @@
 
 #  if 0
 #  elif !defined(__STRICT_ANSI__)
-#   define STLSOFT_API_EXTERNAL_string_wcsnicmp                             STLSOFT_NS_GLOBAL_(_wcsnicmp)
+#   define STLSOFT_API_EXTERNAL_string_wcsnicmp                             STLSOFT_NS_GLOBAL_(wcsncasecmp)
 #  endif
 
   /* Intel */
@@ -454,4 +454,3 @@
 #endif /* !STLSOFT_INCL_STLSOFT_API_external_h_string */
 
 /* ///////////////////////////// end of file //////////////////////////// */
-
