@@ -501,7 +501,8 @@
       defined(__ppc__) || \
       defined(_ARCH_PPC) || \
       defined(__PPC__) || \
-      defined(__powerpc__)
+      defined(__powerpc__) || \
+      defined (__ARM_ARCH_6__)
  /* LLP64 */
 # define _STLSOFT_SIZEOF_SHORT          (2)
 # define _STLSOFT_SIZEOF_INT            (4)
@@ -654,4 +655,3 @@
 #include <stlsoft/internal/cccap/obsolete.h>
 
 /* ///////////////////////////// end of file //////////////////////////// */
-

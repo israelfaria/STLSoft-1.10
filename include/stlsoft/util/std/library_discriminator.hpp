@@ -6,7 +6,7 @@
  * Created:     2nd January 2000
  * Updated:     2nd February 2019
  *
- * Thanks:      To Cl·udio Albuquerque for assisting with VC++ 12 & 14
+ * Thanks:      To Cl√°udio Albuquerque for assisting with VC++ 12 & 14
  *              support. To Gabor Fischer for reporting problems with VC++
  *              9/10 compatibility, and persisting in (re-)reporting it even
  *              when I was being a thickie and unable to reproduce it.
@@ -259,7 +259,12 @@ namespace stlsoft
 # define STLSOFT_CF_STD_LIBRARY_IS_WATCOM_NONE
 # define STLSOFT_CF_STD_LIBRARY_NAME_STRING             "<no standard library with Open Watcom>"
 #else /* ? */
-# error Standard library implementation not recognised
+/* @Voidious: This started breaking on OS X 10.10, so I'm just hacking it... */
+# ifdef STLSOFT_COMPILE_VERBOSE
+#  pragma message("Standard library not recognised, defaulting to MSL")
+# endif /* STLSOFT_COMPILE_VERBOSE */
+# define STLSOFT_CF_STD_LIBRARY_IS_MSL
+# define STLSOFT_CF_STD_LIBRARY_NAME_STRING             "MSL"
 #endif /* various "unique" macros */
 
 /* Detecting presence of Dinkumware is easy (as shown above). The fun is in
@@ -512,4 +517,3 @@ namespace stlsoft
 #endif /* !STLSOFT_INCL_STLSOFT_UTIL_STD_LIBRARY_DISCRIMINATOR */
 
 /* ///////////////////////////// end of file //////////////////////////// */
-
